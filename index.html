@@ -5,13 +5,13 @@
 <title>FreeMajor 와이어프레임 — 화면 12개</title>
 <style>
 *{box-sizing:border-box;margin:0;padding:0;}
-body{font-family:'Apple SD Gothic Neo','Pretendard',system-ui,sans-serif;background:#F0EFEB;padding:24px 32px;color:#1A1A1A;}
+body{font-family:'Apple SD Gothic Neo','Pretendard',system-ui,sans-serif;background:#FFFFFF;padding:24px 32px;color:#1A1A1A;}
 h1{font-size:20px;font-weight:600;margin-bottom:4px;color:#1A1A1A;}
 .sub{font-size:12px;color:#888;margin-bottom:28px;}
 .stage{display:flex;align-items:flex-start;gap:20px;flex-wrap:nowrap;overflow-x:auto;padding-bottom:16px;}
 .col{display:flex;flex-direction:column;align-items:center;gap:10px;flex-shrink:0;}
 .col-label{font-size:11px;font-weight:600;color:#555;letter-spacing:.3px;}
-.phone{width:220px;border:2.5px solid #1A1A1A;border-radius:32px;background:#fff;overflow:hidden;box-shadow:0 4px 24px rgba(0,0,0,.12);}
+.phone{width:220px;border:2.5px solid #1A1A1A;border-radius:32px;background:#fff;overflow:hidden;}
 .statusbar{height:28px;background:#1A1A1A;display:flex;align-items:center;justify-content:space-between;padding:0 14px;}
 .statusbar-pill{width:60px;height:5px;border-radius:3px;background:rgba(255,255,255,.3);}
 .statusbar-r{display:flex;gap:4px;align-items:center;}
@@ -170,7 +170,7 @@ h1{font-size:20px;font-weight:600;margin-bottom:4px;color:#1A1A1A;}
 <div class="sub">전공 질문을 망설이는 대학생을 위한 익명 정보 공유 서비스 · 화면 12개 · 2026</div>
 
 <!-- ── 온보딩 섹션 ── -->
-<div style="font-size:11px;font-weight:600;color:#888;margin-bottom:12px;padding-bottom:8px;border-bottom:1px solid #e0e0e0;">온보딩 플로우 — 진입 전 인증</div>
+<div style="font-size:11px;font-weight:600;color:#888;margin-bottom:12px;padding-bottom:8px;border-bottom:1px solid #e0e0e0;">온보딩 플로우 — '질문 올리기' 시점 인증 트리거</div>
 <div class="stage" style="margin-bottom:32px;">
 
 <!-- OB01 스플래시 -->
@@ -183,15 +183,17 @@ h1{font-size:20px;font-weight:600;margin-bottom:4px;color:#1A1A1A;}
       <div class="ob-logo">FreeMajor</div>
       <div class="ob-tagline">전공 정보를 찾거나 질문해야 할 때,<br>적절한 사람에게 빠르게 연결되는<br>대학생 익명 커뮤니티</div>
       <div style="flex:1;"></div>
-      <button class="ob-btn" style="margin-top:0;">시작하기</button>
-      <div class="ob-skip" style="margin-top:10px;">이미 계정이 있어요 → 로그인</div>
+      <button class="ob-btn" style="margin-top:0;">시작하기 (가입)</button>
+      <button class="ob-btn ghost" style="margin-top:8px;">먼저 둘러볼게요</button>
+      <div class="ob-skip" style="margin-top:8px;">이미 계정이 있어요 → 로그인</div>
     </div>
     <div class="homeind"><div class="homeind-bar"></div></div>
   </div>
   <div class="anno">
     <div class="anno-title">설계 포인트</div>
     <div class="anno-item"><div class="anno-num">1</div><div class="anno-text"><b>로고 + 서비스 한 줄 정의</b><br>첫인상에서 서비스 컨셉 전달<span class="anno-us">유저스토리: 이수아가 이게 뭔지 바로 이해한다</span></div></div>
-    <div class="anno-item"><div class="anno-num">2</div><div class="anno-text"><b>시작하기 / 로그인 분기</b><br>신규·기존 사용자 분리</div></div>
+    <div class="anno-item"><div class="anno-num">2</div><div class="anno-text"><b>"먼저 둘러볼게요" 추가</b><br>인증 없이 홈 피드 진입 가능. 가입 강요 없이 서비스 먼저 경험 → 질문 올리기 시점에 인증 트리거<span class="anno-us">이수아: 가입 전에 어떤 서비스인지 확인하고 싶다</span></div></div>
+    <div class="anno-item"><div class="anno-num">3</div><div class="anno-text"><b>시작하기 / 로그인 분기 유지</b><br>신규·기존 사용자 분리</div></div>
   </div>
 </div>
 
@@ -219,7 +221,7 @@ h1{font-size:20px;font-weight:600;margin-bottom:4px;color:#1A1A1A;}
 
 <!-- OB03 학교 검색 + 선택 -->
 <div class="col">
-  <div class="col-label">OB03 학교 선택</div>
+  <div class="col-label">OB03 학교 선택 ← 질문 올리기 탭 시 트리거</div>
   <div class="phone">
     <div class="statusbar"><div class="statusbar-pill"></div><div class="statusbar-r"><div class="statusbar-icon"></div></div></div>
     <div class="pnav"><span class="pnav-back">‹</span><span class="pnav-title">학교 선택</span></div>
@@ -255,8 +257,9 @@ h1{font-size:20px;font-weight:600;margin-bottom:4px;color:#1A1A1A;}
   </div>
   <div class="anno">
     <div class="anno-title">설계 포인트</div>
-    <div class="anno-item"><div class="anno-num">1</div><div class="anno-text"><b>학교 검색 + 목록</b><br>타이핑 없이 빠른 선택<span class="anno-us">유저스토리: 이수아가 내 학교를 등록한다</span></div></div>
-    <div class="anno-item"><div class="anno-num">2</div><div class="anno-text"><b>선택 시 체크 표시</b><br>현재 상태 명확하게 시각화</div></div>
+    <div class="anno-item"><div class="anno-num">1</div><div class="anno-text"><b>질문 올리기 탭 시 최초 트리거</b><br>첫 진입이 아니라 질문을 올리려는 시점에 인증 시작. 서비스를 먼저 경험한 후 가입 동기 생김<span class="anno-us">이수아: 질문을 올리고 싶어졌을 때 가입한다</span></div></div>
+    <div class="anno-item"><div class="anno-num">2</div><div class="anno-text"><b>학교 검색 + 목록</b><br>타이핑 없이 빠른 선택. 인증 허들 최소화</div></div>
+    <div class="anno-item"><div class="anno-num">3</div><div class="anno-text"><b>선택 시 체크 표시</b><br>현재 상태 명확하게 시각화</div></div>
   </div>
 </div>
 
@@ -286,7 +289,7 @@ h1{font-size:20px;font-weight:600;margin-bottom:4px;color:#1A1A1A;}
   </div>
   <div class="anno">
     <div class="anno-title">설계 포인트</div>
-    <div class="anno-item"><div class="anno-num">1</div><div class="anno-text"><b>학교 이메일 인증</b><br>재학생 신뢰 기반 확보. 맥락 있는 익명의 전제<span class="anno-us">유저스토리: 이수아가 진짜 학생임을 증명한다</span></div></div>
+    <div class="anno-item"><div class="anno-num">1</div><div class="anno-text"><b>학교 이메일 인증</b><br>재학생 신뢰 기반 확보. 맥락 있는 익명의 전제. 질문 올리기 시점에 진행되므로 동기 있는 상태에서 인증<span class="anno-us">이수아: 질문을 올리기 위해 학생임을 증명한다</span></div></div>
     <div class="anno-item"><div class="anno-num">2</div><div class="anno-text"><b>이메일 비공개 명시</b><br>"외부에 공개되지 않습니다" — 프라이버시 불안 해소</div></div>
     <div class="anno-item"><div class="anno-num">3</div><div class="anno-text"><b>6자리 코드 인증</b><br>에브리타임 방식. 간단하고 익숙한 UX</div></div>
   </div>
@@ -444,6 +447,21 @@ h1{font-size:20px;font-weight:600;margin-bottom:4px;color:#1A1A1A;}
     <div class="pnav"><span class="pnav-title">탐색</span><div class="pnav-r"><span style="font-size:9px;color:#aaa;">전체보기</span></div></div>
     <div class="pbody">
       <div class="search-bar"><span style="font-size:11px;color:#888;">🔍</span><span class="search-ph">전공·키워드로 검색</span></div>
+      <!-- 이번 주 콘텐츠 섹션 추가 -->
+      <div class="section-hd"><span class="section-title">이번 주 콘텐츠</span><span class="section-more">더보기</span></div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;margin-bottom:9px;">
+        <div style="background:#1A1A1A;border-radius:9px;padding:9px;">
+          <div style="font-size:8px;color:rgba(255,255,255,.5);margin-bottom:4px;">재료·도구</div>
+          <div style="font-size:9.5px;font-weight:600;color:#fff;line-height:1.4;margin-bottom:5px;">프린트룸 지기가 알려주는 형광 vs 리소</div>
+          <div style="font-size:8px;color:rgba(255,255,255,.4);">47명이 물어봤어요</div>
+        </div>
+        <div style="background:#F1EFE8;border-radius:9px;padding:9px;">
+          <div style="font-size:8px;color:#888;margin-bottom:4px;">공모전</div>
+          <div style="font-size:9.5px;font-weight:600;color:#1A1A1A;line-height:1.4;margin-bottom:5px;">요즘 포트폴리오 트렌드 총정리</div>
+          <div style="font-size:8px;color:#aaa;">32명이 물어봤어요</div>
+        </div>
+      </div>
+      <div class="divider"></div>
       <div class="section-hd"><span class="section-title">인기 태그</span></div>
       <div class="popular-tag">
         <span class="pop-tag">#재료추천</span><span class="pop-tag">#리소그래프</span><span class="pop-tag">#공모전</span><span class="pop-tag">#포트폴리오</span><span class="pop-tag">#피그마</span><span class="pop-tag">#졸업전시</span>
@@ -483,9 +501,9 @@ h1{font-size:20px;font-weight:600;margin-bottom:4px;color:#1A1A1A;}
   </div>
   <div class="anno">
     <div class="anno-title">설계 포인트</div>
-    <div class="anno-item"><div class="anno-num">1</div><div class="anno-text"><b>키워드 검색</b><br>과거 질문 아카이빙 탐색<span class="anno-us">유저스토리: 이수아가 비슷한 고민을 미리 검색한다</span></div></div>
-    <div class="anno-item"><div class="anno-num">2</div><div class="anno-text"><b>인기 태그</b><br>클릭하면 해당 태그 피드로 이동</div></div>
-    <div class="anno-item"><div class="anno-num">3</div><div class="anno-text"><b>전공별 채널 + 수치</b><br>질문/답변 수 노출. 활성화 지표 시각화<span class="anno-us">이수아: 비슷한 고민을 미리 검색한다</span><span class="anno-us">박지은: 내가 답할 수 있는 전공 채널을 고른다</span></div></div>
+    <div class="anno-item"><div class="anno-num">1</div><div class="anno-text"><b>이번 주 콘텐츠 섹션 추가</b><br>Q&A 데이터 기반 큐레이션 — "N명이 물어봤어요"로 콘텐츠 신뢰도 확보. 홈 피드는 순수 Q&A 유지<span class="anno-us">이수아: 습관적으로 탐색 탭을 열게 된다</span></div></div>
+    <div class="anno-item"><div class="anno-num">2</div><div class="anno-text"><b>키워드 검색</b><br>과거 질문 아카이빙 탐색<span class="anno-us">이수아: 비슷한 고민을 미리 검색한다</span></div></div>
+    <div class="anno-item"><div class="anno-num">3</div><div class="anno-text"><b>전공별 채널 + 수치</b><br>질문/답변 수 노출. 활성화 지표 시각화<span class="anno-us">박지은: 내가 답할 수 있는 전공 채널을 고른다</span></div></div>
   </div>
 </div>
 
@@ -971,13 +989,27 @@ h1{font-size:20px;font-weight:600;margin-bottom:4px;color:#1A1A1A;}
         <div style="flex:1;text-align:center;padding:6px 0;font-size:10px;font-weight:600;color:#1A1A1A;border-bottom:2px solid #1A1A1A;">내 답변</div>
         <div style="flex:1;text-align:center;padding:6px 0;font-size:10px;color:#bbb;">스크랩</div>
       </div>
+      <!-- 임팩트 요약 -->
+      <div style="display:flex;justify-content:space-between;align-items:center;background:#F5F5F0;border-radius:8px;padding:7px 10px;margin-bottom:8px;">
+        <div style="font-size:9px;color:#888;">총 <b style="color:#1A1A1A;">23개</b> 답변</div>
+        <div style="width:1px;height:12px;background:#ddd;"></div>
+        <div style="font-size:9px;color:#888;"><b style="color:#1A1A1A;">247명</b>이 읽었어요</div>
+        <div style="width:1px;height:12px;background:#ddd;"></div>
+        <div style="font-size:9px;color:#888;">도움됐어요 <b style="color:#1A1A1A;">38</b></div>
+      </div>
       <div class="card">
         <div style="font-size:9px;color:#aaa;margin-bottom:4px;">원본 질문 · 재료·도구</div>
         <div style="font-size:10px;color:#888;margin-bottom:5px;line-height:1.4;">학교 프린트룸 형광 프린트 vs 리소 어떻게 선택하셨나요?</div>
         <div style="background:#F5F5F0;border-radius:6px;padding:6px 8px;margin-bottom:5px;">
           <div style="font-size:10px;color:#1A1A1A;line-height:1.4;">형광은 색이 선명하고 빠르게 뽑을 수 있어서 제출용으로 많이 써요...</div>
         </div>
-        <div class="card-bot"><div class="emoji-bar"><span class="emoji-btn">🙏</span><span class="emoji-btn">🔥</span><span class="emoji-count">+8</span></div><span class="timestamp" style="margin-left:auto;">1시간 전</span></div>
+        <div class="card-bot">
+          <div class="emoji-bar"><span class="emoji-btn">🙏</span><span class="emoji-btn">🔥</span><span class="emoji-count">+8</span></div>
+          <div style="margin-left:auto;display:flex;gap:6px;align-items:center;">
+            <span style="font-size:8.5px;color:#aaa;">👁 47명</span>
+            <span style="font-size:8.5px;color:#aaa;">🤍 12명</span>
+          </div>
+        </div>
       </div>
       <div class="card">
         <div style="font-size:9px;color:#aaa;margin-bottom:4px;">원본 질문 · 공모전</div>
@@ -985,7 +1017,13 @@ h1{font-size:20px;font-weight:600;margin-bottom:4px;color:#1A1A1A;}
         <div style="background:#F5F5F0;border-radius:6px;padding:6px 8px;margin-bottom:5px;">
           <div style="font-size:10px;color:#1A1A1A;line-height:1.4;">타이포그래피 공모전이 포트폴리오에 가장 잘 맞아요. 특히...</div>
         </div>
-        <div class="card-bot"><div class="emoji-bar"><span class="emoji-btn">💡</span><span class="emoji-count">+5</span></div><span class="timestamp" style="margin-left:auto;">3일 전</span></div>
+        <div class="card-bot">
+          <div class="emoji-bar"><span class="emoji-btn">💡</span><span class="emoji-count">+5</span></div>
+          <div style="margin-left:auto;display:flex;gap:6px;align-items:center;">
+            <span style="font-size:8.5px;color:#aaa;">👁 23명</span>
+            <span style="font-size:8.5px;color:#aaa;">🤍 8명</span>
+          </div>
+        </div>
       </div>
     </div>
     <div class="botnav">
@@ -999,9 +1037,9 @@ h1{font-size:20px;font-weight:600;margin-bottom:4px;color:#1A1A1A;}
   </div>
   <div class="anno">
     <div class="anno-title">설계 포인트</div>
-    <div class="anno-item"><div class="anno-num">1</div><div class="anno-text"><b>원본 질문 + 내 답변 함께 표시</b><br>맥락 유지. 어떤 질문에 뭐라 했는지 한 번에<span class="anno-us">박지은: 내가 답변한 것들이 쌓이는 걸 본다</span></div></div>
-    <div class="anno-item"><div class="anno-num">2</div><div class="anno-text"><b>받은 이모지 반응 표시</b><br>🙏×8 🔥. 기여가 인정받는 것을 시각화<span class="anno-us">박지은: 기여한 것이 보이고 인정받는 느낌이 필요하다</span></div></div>
-    <div class="anno-item"><div class="anno-num">3</div><div class="anno-text"><b>답변 수 23개 강조</b><br>공급자 활동량이 숫자로 쌓임. 성취감 설계</div></div>
+    <div class="anno-item"><div class="anno-num">1</div><div class="anno-text"><b>임팩트 요약 바 추가</b><br>총 답변 수 · 읽힌 횟수 · 도움됐어요를 상단에 한눈에. 포인트·뱃지 외 '공헌감' 시각화<span class="anno-us">박지은: 기여한 것이 보이고 인정받는 느낌이 필요하다</span></div></div>
+    <div class="anno-item"><div class="anno-num">2</div><div class="anno-text"><b>카드별 👁 읽힌 수 + 🤍 도움됐어요</b><br>답변 하나하나가 몇 명에게 닿았는지 보임. "내 답변이 사라지지 않고 계속 읽힌다"는 자기성장 동기<span class="anno-us">박지은: 계속 올 만한 이유가 있어야 지속할 수 있다</span></div></div>
+    <div class="anno-item"><div class="anno-num">3</div><div class="anno-text"><b>원본 질문 + 내 답변 맥락 유지</b><br>어떤 질문에 어떤 답을 했는지 한 번에 확인. 답변 이력이 포트폴리오처럼 쌓임<span class="anno-us">박지은: 내가 답변한 것들이 쌓이는 걸 본다</span></div></div>
   </div>
 </div>
 
